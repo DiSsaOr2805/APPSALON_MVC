@@ -38,7 +38,7 @@ class Email {
 
         $contenido = '<html>';
         $contenido .= "<p><strong>Hola " . $this->email . "</strong> Has creado tu cuenta en AppSalon, solo debes confirmarla presionando el siguente enlace</p>";
-        $contenido .= "<p>Presiona aquí: <a href='http://localhost:3000/confirmar-cuenta?token=" . $this->token . "'>Confirmar Cuenta</a>";
+        $contenido .= "<p>Presiona aquí: <a href='http://". $_SERVER["HTTP_HOST"] ."/confirmar-cuenta?token=" . $this->token . "'>Confirmar Cuenta</a>";
         $contenido .= "<p>Si tu no solicitaste esta cuenta, puedes ignorar el mensaje</p>";
         $contenido .= "</html>";
         $mail->Body = $contenido;
@@ -67,10 +67,9 @@ class Email {
         $mail->isHTML(true);
         $mail->CharSet = 'UTF-8';
 
-        $server = $_SERVER['SERVER_NAME'];
         $contenido = '<html>';
         $contenido .= "<p><strong>Hola " . $this->nombre . "</strong> Has solicitado reestablecer tu password, sigue el siguiente enlace para hacerlo.</p>";
-        $contenido .= "<p>Presiona aquí: <a href='https://secret-journey-45352.herokuapp.com/olvide/recuperar?token=" . $this->token . "'>Reestablecer password</a>";
+        $contenido .= "<p>Presiona aquí: <a href='http://". $_SERVER["HTTP_HOST"] ."/recuperar?token=" . $this->token . "'>Reestablecer password</a>";
         $contenido .= "<p>Si tu no solicitaste esta cuenta, puedes ignorar el mensaje</p>";
         $contenido .= "</html>";
         $mail->Body = $contenido;
