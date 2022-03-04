@@ -43,7 +43,7 @@
     <div class="campo">
         <label for="email">Email</label>
         <input 
-            type="tel"
+            type="email"
             id="email"
             name="email"
             placeholder="Tu Email"
