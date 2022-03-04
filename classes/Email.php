@@ -67,7 +67,7 @@ class Email {
         $mail->isHTML(true);
         $mail->CharSet = 'UTF-8';
 
-        $server = $_SERVER['HTTP_REFERER'];
+        $server = $_SERVER['REQUEST_URI'];
         $contenido = '<html>';
         $contenido .= "<p><strong>Hola " . $this->nombre . "</strong> Has solicitado reestablecer tu password, sigue el siguiente enlace para hacerlo.</p>";
         $contenido .= "<p>Presiona aquí: <a href=`${server}/recuperar?token=`" . $this->token . "'>Reestableces password</a>";
