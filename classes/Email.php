@@ -70,7 +70,7 @@ class Email {
         $server = $_SERVER['SERVER_NAME'];
         $contenido = '<html>';
         $contenido .= "<p><strong>Hola " . $this->nombre . "</strong> Has solicitado reestablecer tu password, sigue el siguiente enlace para hacerlo.</p>";
-        $contenido .= "<p>Presiona aquí: <a href=`${server}/recuperar?token=`" . $this->token . "'>Reestableces password</a>";
+        $contenido .= "<p>Presiona aquí: <a href='https://secret-journey-45352.herokuapp.com/olvide/recuperar?token=" . $this->token . "'>Reestablecer password</a>";
         $contenido .= "<p>Si tu no solicitaste esta cuenta, puedes ignorar el mensaje</p>";
         $contenido .= "</html>";
         $mail->Body = $contenido;
